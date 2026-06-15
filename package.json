@@ -1,0 +1,14 @@
+{
+  "name": "idce-itsb",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "setup": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

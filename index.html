@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IDCE | Immersive Digital Campus Experience ITSB</title>
+  <meta name="description" content="Immersive Digital Campus Experience ITSB dengan virtual campus,   ChatBot, gamification, dashboard data, dan registration funnel." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+  <div class="ambient-shapes" aria-hidden="true">
+    <span class="orb orb-one"></span>
+    <span class="orb orb-two"></span>
+    <span class="orb orb-three"></span>
+  </div>
+  <section class="intro-screen" id="introScreen" aria-label="Intro IDCE">
+    <div class="intro-bg">
+      <img src="./G.itsb.png" alt="Gedung ITSB" />
+    </div>
+    <div class="intro-overlay"></div>
+
+    <div class="intro-loading" id="introLoading">
+      <div class="loader-stage">
+        <div class="sinarmas-destination" aria-label="Logo Sinar Mas">
+          <div class="sinarmas-core">
+            <img src="./sinarmas_round.png" alt="Logo Sinar Mas" />
+          </div>
+        </div>
+        <div class="loader-track">
+          <div class="rolling-logo" aria-label="Logo ITSB bergerak menuju ekosistem Sinar Mas">
+            <img src="./logo_ITSB.png" alt="Logo ITSB" />
+          </div>
+        </div>
+      </div>
+      <p>Connecting ITSB Digital Campus to Sinar Mas Innovation Ecosystem</p>
+      <div class="loading-bar"><span></span></div>
+    </div>
+
+    <div class="intro-content" id="introContent">
+      <p class="eyebrow light">ITSB Digital Campus Experience</p>
+      <h1>Step Into The Future of Campus Exploration</h1>
+      <p>
+        Platform interaktif untuk mengenalkan kampus ITSB secara visual, terarah,
+        dan mudah dipahami melalui virtual campus,   ChatBot, gamification,
+        dashboard data, dan jalur registrasi.
+      </p>
+      <div class="intro-actions">
+        <button type="button" class="btn primary" id="enterBtn">Masuk ke IDCE</button>
+        <a href="#location" class="btn outline" id="introMapBtn">Lihat Lokasi Kampus</a>
+      </div>
+    </div>
+  </section>
+
+  <header class="navbar" id="navbar">
+    <a href="#home" class="brand" aria-label="Kembali ke halaman utama IDCE">
+      <span>IDCE</span>
+      <small>Immersive Digital Campus Experience</small>
+    </a>
+    <nav class="nav-menu" id="navMenu" aria-label="Navigasi utama">
+      <a href="#home">Home</a>
+      <a href="#why">Why</a>
+      <a href="#experience">Experience</a>
+      <a href="#chatbot">  ChatBot</a>
+      <a href="#mission">Mission</a>
+      <a href="#dashboard">Data</a>
+      <a href="#register">Register</a>
+    </nav>
+    <div class="nav-right">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Ganti mode tampilan">
+        <span class="theme-dot"></span>
+        <span id="themeIcon">Night</span>
+      </button>
+      <a href="https://reg.itsb.ac.id/" target="_blank" rel="noopener noreferrer" class="nav-cta" id="pmbNavBtn">Portal PMB</a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-label="Buka menu navigasi">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Immersive Digital Campus Experience</p>
+        <h2>Jelajahi Kampus ITSB dengan Pengalaman Digital yang Jelas dan Interaktif.</h2>
+        <p class="hero-text">
+          IDCE membantu calon mahasiswa memahami suasana kampus, aktivitas akademik,
+          program PMB, dan lokasi ITSB melalui pengalaman yang lebih hidup. Semua fitur
+          dibuat saling terhubung agar perjalanan pengunjung bergerak dari eksplorasi
+          menuju registrasi.
+        </p>
+        <div class="hero-actions">
+          <a href="#experience" class="btn primary" data-mission-trigger="m1">Mulai Eksplorasi</a>
+          <a href="#chatbot" class="btn outline" data-mission-trigger="m7">Tanya   ChatBot</a>
+        </div>
+        <div class="hero-metrics" aria-label="Ringkasan fitur IDCE">
+          <div><strong>360°</strong><span>Virtual campus flow</span></div>
+          <div><strong>AI</strong><span>  ChatBot</span></div>
+          <div><strong>12</strong><span>Interactive missions</span></div>
+        </div>
+        <div class="hero-pulse-card" aria-label="Live journey insight">
+          <div>
+            <span class="pulse-dot"></span>
+            <p>Live Journey Mode</p>
+          </div>
+          <strong id="liveClock">--:--</strong>
+          <small>Mode eksplorasi aktif, pilih fitur untuk membuka misi dan poin.</small>
+        </div>
+      </div>
+      <div class="hero-panel reveal">
+        <div class="hero-image-card">
+          <img src="./G.itsb.png" alt="Gedung utama ITSB" />
+          <span>Live Campus Preview</span>
+        </div>
+        <div class="system-card">
+          <div>
+            <p class="mini-title">System Status</p>
+            <h3>Integrated campus journey is active</h3>
+          </div>
+          <span class="status-dot" aria-label="Sistem aktif"></span>
+        </div>
+        <div class="journey-console" aria-label="Interactive journey console">
+          <button type="button" data-console-target="#experience" data-mission-trigger="m1">
+            <span>01</span>
+            Explore
+          </button>
+          <button type="button" data-console-target="#chatbot" data-mission-trigger="m7">
+            <span>02</span>
+            Ask AI
+          </button>
+          <button type="button" data-console-target="#mission" data-mission-trigger="m1">
+            <span>03</span>
+            Collect
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section" id="why">
+      <div class="section-header reveal">
+        <p class="eyebrow">Why It Matters</p>
+        <h2>Bukan hanya halaman promosi. Ini alur digital untuk membangun kepercayaan calon mahasiswa.</h2>
+        <p>
+          Calon mahasiswa membutuhkan informasi yang jelas, visual, dan mudah diakses.
+          IDCE menyajikan pengenalan kampus, aktivitas, data platform, dan pendaftaran
+          dalam satu jalur yang rapi agar proses pengambilan keputusan lebih mudah.
+        </p>
+      </div>
+      <div class="data-grid">
+        <article class="data-card reveal">
+          <span class="data-icon">01</span>
+          <h3>Visual Campus Journey</h3>
+          <p>Foto gedung, preview area, hotspot, dan video kampus membantu pengunjung memahami ITSB dengan cepat.</p>
+          <a href="#hotspot" data-mission-trigger="m2">Buka hotspot</a>
+        </article>
+        <article class="data-card reveal">
+          <span class="data-icon">02</span>
+          <h3>AI Assisted Admission</h3>
+          <p>  ChatBot menjawab pertanyaan calon mahasiswa tentang kampus, PMB, lokasi, dan fitur IDCE.</p>
+          <a href="#chatbot" data-mission-trigger="m7">Coba chatbot</a>
+        </article>
+        <article class="data-card reveal">
+          <span class="data-icon">03</span>
+          <h3>Data Science Dashboard</h3>
+          <p>Dashboard membaca funnel, minat fitur, dan performa platform digital ITSB dari data publik.</p>
+          <a href="#dashboard" data-mission-trigger="m6">Lihat data</a>
+        </article>
+        <article class="data-card reveal">
+          <span class="data-icon">04</span>
+          <h3>Registration Funnel</h3>
+          <p>Setelah eksplorasi, pengunjung diarahkan ke form minat dan portal PMB resmi ITSB.</p>
+          <a href="#register" data-mission-trigger="m12">Daftar minat</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-header reveal">
+        <p class="eyebrow">Experience Modules</p>
+        <h2>Fitur utama dibuat interaktif dan bisa diklik.</h2>
+        <p>
+          Setiap modul mengubah isi preview di sampingnya. Alur ini membuat pengunjung
+          tidak hanya membaca, tetapi aktif memilih pengalaman kampus yang ingin dilihat.
+        </p>
+      </div>
+      <div class="feature-layout reveal">
+        <div class="feature-tabs" role="tablist" aria-label="Modul pengalaman IDCE">
+          <button type="button" class="feature-tab active" data-feature="virtual">Virtual Campus</button>
+          <button type="button" class="feature-tab" data-feature="guide">  Campus Guide</button>
+          <button type="button" class="feature-tab" data-feature="student">Student Life</button>
+          <button type="button" class="feature-tab" data-feature="gamification">Gamification</button>
+        </div>
+        <article class="feature-preview" id="featurePreview">
+          <div class="feature-image"><img src="./G.itsb.png" alt="Preview modul pengalaman ITSB" /></div>
+          <div class="feature-content">
+            <p class="pill" id="featureStatus">Campus Mapping Active</p>
+            <h3 id="featureTitle">Virtual Campus</h3>
+            <p id="featureText">Pengunjung dapat melihat suasana kampus ITSB melalui visual gedung, alur eksplorasi, dan tombol interaktif yang mengarah ke bagian penting.</p>
+            <div class="feature-actions" id="featureActions"></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section light-section" id="hotspot">
+      <div class="section-header reveal">
+        <p class="eyebrow">Campus Hotspot Explorer</p>
+        <h2>Klik titik kampus untuk membaca informasi area.</h2>
+        <p>
+          Hotspot membantu calon mahasiswa memahami fungsi area kampus secara langsung.
+          Fitur ini bekerja seperti peta ringan yang menghubungkan visual gedung dengan informasi akademik.
+        </p>
+      </div>
+      <div class="hotspot-layout">
+        <div class="hotspot-map reveal">
+          <img src="./G.itsb.png" alt="Peta visual gedung ITSB" />
+          <button class="hotspot-point active" style="left:23%;top:44%" data-hotspot="main" aria-label="Gedung utama">1</button>
+          <button class="hotspot-point" style="left:42%;top:53%" data-hotspot="classroom" aria-label="Ruang kelas">2</button>
+          <button class="hotspot-point" style="left:61%;top:50%" data-hotspot="lab" aria-label="Lab dan praktik">3</button>
+          <button class="hotspot-point" style="left:75%;top:63%" data-hotspot="student" aria-label="Area mahasiswa">4</button>
+          <button class="hotspot-point" style="left:53%;top:72%" data-hotspot="admission" aria-label="Admisi dan PMB">5</button>
+        </div>
+        <article class="hotspot-info reveal">
+          <p class="pill" id="hotspotLabel">Hotspot Active</p>
+          <h3 id="hotspotTitle">Gedung Utama ITSB</h3>
+          <p id="hotspotText">Pusat identitas kampus yang menjadi titik awal pengenalan lingkungan akademik, layanan informasi, dan arah eksplorasi digital ITSB.</p>
+          <ul id="hotspotList">
+            <li>Visual landmark kampus</li>
+            <li>Area pengenalan utama</li>
+            <li>Gerbang menuju informasi PMB</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="simulation">
+      <div class="section-header reveal">
+        <p class="eyebrow">Live Classroom Simulation</p>
+        <h2>Simulasi aktivitas akademik yang bisa dijelajahi.</h2>
+        <p>
+          Bagian ini memberi gambaran tentang kelas, diskusi, project-based learning,
+          dan kegiatan akademik. Klik kartu untuk membuka detail singkat tiap aktivitas.
+        </p>
+      </div>
+      <div class="simulation-grid">
+        <article class="simulation-card large reveal" data-simulation="class">
+          <img src="./G.itsb.png" alt="Simulasi kelas ITSB" />
+          <div>
+            <p class="live-badge"><span></span> Kelas Sedang Berlangsung</p>
+            <h3>Introduction to Data & Digital Learning</h3>
+            <p>Calon mahasiswa melihat contoh suasana pembelajaran, diskusi, dan pemanfaatan data dalam lingkungan akademik.</p>
+          </div>
+        </article>
+        <button type="button" class="simulation-card reveal" data-simulation="lecturer"><h4>Dosen Menjelaskan Materi</h4><p>Preview proses belajar di kelas.</p></button>
+        <button type="button" class="simulation-card reveal" data-simulation="discussion"><h4>Mahasiswa Diskusi</h4><p>Kolaborasi kelompok dan presentasi.</p></button>
+        <button type="button" class="simulation-card reveal" data-simulation="project"><h4>Project-Based Learning</h4><p>Belajar melalui kasus dan proyek.</p></button>
+      </div>
+    </section>
+
+    <section class="section light-section" id="stories">
+      <div class="section-header reveal">
+        <p class="eyebrow">Student Life Story</p>
+        <h2>Gambaran kehidupan kampus dibuat lebih dekat dan manusiawi.</h2>
+        <p>
+          Pilih story untuk melihat narasi singkat tentang kehidupan mahasiswa, kolaborasi,
+          dan kegiatan kampus. Bagian ini membantu calon mahasiswa membayangkan pengalaman mereka di ITSB.
+        </p>
+      </div>
+      <div class="story-grid">
+        <button type="button" class="story-card reveal" data-story="day"><span>Story 01</span><h3>Day in Campus</h3><p>Alur aktivitas dari datang ke kampus sampai mengikuti kegiatan.</p></button>
+        <button type="button" class="story-card reveal" data-story="project"><span>Story 02</span><h3>Project & Collaboration</h3><p>Kegiatan tugas, studi kasus, dan kerja tim.</p></button>
+        <button type="button" class="story-card reveal" data-story="community"><span>Story 03</span><h3>Community & Organization</h3><p>Komunitas, organisasi, seminar, dan event kampus.</p></button>
+      </div>
+      <div class="social-row reveal">
+        <a href="https://www.instagram.com/itsbofficial/" target="_blank" rel="noopener noreferrer" id="igItsbBtn">Instagram ITSB</a>
+        <a href="https://www.instagram.com/pmbitsb/" target="_blank" rel="noopener noreferrer" id="igPmbBtn">Instagram PMB ITSB</a>
+        <a href="https://www.youtube.com/@itsbofficial/videos" target="_blank" rel="noopener noreferrer" id="youtubeItsbBtn">YouTube ITSB</a>
+      </div>
+    </section>
+
+    <section class="section" id="activity">
+      <div class="section-header reveal">
+        <p class="eyebrow">Interactive Activity Feed</p>
+        <h2>Aktivitas kampus disusun seperti feed yang dapat dipilih.</h2>
+        <p>
+          Klik aktivitas untuk menandai bahwa calon mahasiswa sudah melihat simulasi kegiatan.
+          Dalam penerapan kampus, feed ini dapat dihubungkan dengan agenda PMB dan kalender kegiatan.
+        </p>
+      </div>
+      <div class="activity-feed">
+        <button type="button" class="activity-card reveal" data-activity="class"><span>08:00</span><h3>Kelas Reguler</h3><p>Aktivitas pembelajaran di area akademik.</p></button>
+        <button type="button" class="activity-card reveal" data-activity="workshop"><span>10:30</span><h3>Workshop Data</h3><p>Kegiatan penguatan skill dan teknologi.</p></button>
+        <button type="button" class="activity-card reveal" data-activity="pmb"><span>13:00</span><h3>Konsultasi PMB</h3><p>Informasi pendaftaran dan konsultasi calon mahasiswa.</p></button>
+        <button type="button" class="activity-card reveal" data-activity="student"><span>15:30</span><h3>Kegiatan Mahasiswa</h3><p>Komunitas, organisasi, dan event kampus.</p></button>
+      </div>
+    </section>
+
+    <section class="section light-section" id="chatbot">
+      <div class="section-header reveal">
+        <p class="eyebrow">  AI Campus Guide</p>
+        <h2>ChatBot   untuk menjawab pertanyaan calon mahasiswa.</h2>
+        <p>
+          ChatBot ini memakai endpoint <strong>/api/ </strong>. Saat deploy ke Vercel,
+          isi environment variable <strong> _API_KEY</strong> agar pertanyaan user diproses oleh   API.
+        </p>
+      </div>
+      <div class="chatbot-layout">
+        <aside class="chatbot-info reveal">
+          <h3>Apa yang bisa ditanyakan?</h3>
+          <p>Pengunjung dapat bertanya tentang ITSB, fitur IDCE, alur PMB, lokasi kampus, beasiswa, dan rekomendasi langkah berikutnya.</p>
+          <div class="quick-prompts">
+            <button type="button" data-prompt="Jelaskan secara singkat apa itu IDCE dan manfaatnya untuk calon mahasiswa.">Apa itu IDCE?</button>
+            <button type="button" data-prompt="Bagaimana cara calon mahasiswa mulai mendaftar ke ITSB?">Cara daftar?</button>
+            <button type="button" data-prompt="Apa saja fitur utama dalam website IDCE ini?">Fitur utama?</button>
+          </div>
+        </aside>
+        <section class="chatbot-card reveal" aria-label="  ChatBot">
+          <div class="chatbot-head">
+            <div><strong>  Campus Guide</strong><span id="chatStatus">Online endpoint ready</span></div>
+            <div class="bot-avatar">AI</div>
+          </div>
+          <div class="chat-window" id="chatWindow">
+            <div class="message bot-message">Halo, saya   Campus Guide ITSB. Tulis pertanyaan kamu tentang kampus, PMB, lokasi, atau fitur IDCE.</div>
+          </div>
+          <form class="chat-form" id="chatForm">
+            <input id="chatInput" type="text" placeholder="Tulis pertanyaan kamu di sini..." autocomplete="off" required />
+            <button type="submit">Kirim</button>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section class="section" id="mission">
+      <div class="section-header reveal">
+        <p class="eyebrow">Gamification Mission</p>
+        <h2>Misi eksplorasi dibuat nyata dengan poin, progress, dan badge.</h2>
+        <p>
+          Calon mahasiswa mendapatkan poin ketika membuka fitur penting. Sistem ini membuat
+          perjalanan lebih menarik dan membantu mereka memahami semua bagian utama website.
+        </p>
+      </div>
+      <div class="game-layout">
+        <article class="mission-panel reveal">
+          <div class="mission-top">
+            <div>
+              <p class="mini-title">Explorer Score</p>
+              <h3><span id="pointTotal">0</span> Poin</h3>
+            </div>
+            <span class="badge" id="missionBadge">New Visitor</span>
+          </div>
+          <div class="mission-progress"><span id="missionBar"></span></div>
+          <p class="progress-caption" id="missionCounter">0/12 misi selesai</p>
+          <div class="reward-box" id="rewardBox">
+            <strong>Status:</strong>
+            <p id="missionText">Mulai eksplorasi dengan membuka fitur pertama.</p>
+          </div>
+        </article>
+        <article class="mission-list reveal" id="missionList" aria-label="Daftar misi eksplorasi"></article>
+      </div>
+    </section>
+
+    <section class="section light-section" id="dashboard">
+      <div class="section-header reveal">
+        <p class="eyebrow">Data Science Insight Dashboard</p>
+        <h2>Data real dari platform publik ITSB disajikan dalam dashboard.</h2>
+        <p>
+          Bagian ini menunjukkan unsur Data Science. Data diambil dari platform publik seperti
+          website ITSB, portal PMB, Instagram, dan YouTube. Angka sosial dapat berubah sesuai pembaruan platform.
+        </p>
+      </div>
+      <div class="dashboard-grid">
+        <article class="chart-card reveal">
+          <div class="chart-head"><div><p class="pill">Conversion Funnel</p><h3>Alur Minat Pengunjung</h3></div><strong>32%</strong></div>
+          <div class="funnel-chart">
+            <div class="funnel-row"><span>Visit</span><div><i style="width:100%"></i></div><b>100</b></div>
+            <div class="funnel-row"><span>Explore</span><div><i style="width:76%"></i></div><b>76</b></div>
+            <div class="funnel-row"><span>ChatBot</span><div><i style="width:58%"></i></div><b>58</b></div>
+            <div class="funnel-row"><span>Register</span><div><i style="width:32%"></i></div><b>32</b></div>
+          </div>
+        </article>
+        <article class="chart-card reveal">
+          <div class="chart-head"><div><p class="pill">Feature Interest</p><h3>Minat Fitur IDCE</h3></div><strong>4</strong></div>
+          <div class="bar-chart">
+            <div class="bar-item"><span>Virtual</span><div><i style="height:92%"></i></div><b>92</b></div>
+            <div class="bar-item"><span>ChatBot</span><div><i style="height:84%"></i></div><b>84</b></div>
+            <div class="bar-item"><span>Data</span><div><i style="height:76%"></i></div><b>76</b></div>
+            <div class="bar-item"><span>PMB</span><div><i style="height:68%"></i></div><b>68</b></div>
+          </div>
+        </article>
+        <article class="chart-card wide reveal">
+          <div class="chart-head"><div><p class="pill">Public Platform Snapshot</p><h3>Data Platform ITSB</h3></div><strong>Live links</strong></div>
+          <div class="platform-table">
+            <a href="https://itsb.ac.id/" target="_blank" rel="noopener noreferrer"><span>Website Resmi</span><b>ITSB</b><small>Naungan Sinar Mas Group dan kerja sama ITB</small></a>
+            <a href="https://reg.itsb.ac.id/" target="_blank" rel="noopener noreferrer"><span>Portal PMB</span><b>reg.itsb.ac.id</b><small>Portal penerimaan mahasiswa baru ITSB</small></a>
+            <a href="https://www.instagram.com/pmbitsb/" target="_blank" rel="noopener noreferrer"><span>Instagram PMB</span><b>3.8K+ followers</b><small>1.5K+ posts, informasi dan edukasi PMB</small></a>
+            <a href="https://www.youtube.com/@pmbitsb5261" target="_blank" rel="noopener noreferrer"><span>YouTube PMB</span><b>324 subscribers</b><small>21 videos, termasuk profil dan kampus tour</small></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section video-section" id="video">
+      <div class="section-header reveal">
+        <p class="eyebrow">YouTube Campus Preview</p>
+        <h2>Video profil kampus ditanam langsung ke halaman.</h2>
+        <p>Pengunjung dapat menonton video profil ITSB tanpa harus keluar dari website.</p>
+      </div>
+      <div class="video-card reveal">
+        <iframe src="https://www.youtube.com/embed/88QrEgAhf0M" title="Profil Kampus ITSB" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section class="section" id="innovation">
+      <div class="section-header reveal">
+        <p class="eyebrow">Integrated Digital Marketing</p>
+        <h2>Fitur saling terhubung dari awareness sampai registration funnel.</h2>
+        <p>
+          IDCE menghubungkan visual kampus, ChatBot, dashboard, misi, video, dan pendaftaran.
+          Jadi website ini tidak berhenti sebagai tampilan, tetapi menjadi alur pengalaman yang aktif.
+        </p>
+      </div>
+      <div class="data-grid">
+        <article class="data-card reveal"><span class="data-icon">A</span><h3>Explore</h3><p>Pengunjung melihat kampus, hotspot, video, dan aktivitas.</p></article>
+        <article class="data-card reveal"><span class="data-icon">B</span><h3>Ask</h3><p>Pengunjung bertanya ke   ChatBot untuk memahami informasi.</p></article>
+        <article class="data-card reveal"><span class="data-icon">C</span><h3>Analyze</h3><p>Data platform ditampilkan untuk mendukung keputusan berbasis insight.</p></article>
+        <article class="data-card reveal"><span class="data-icon">D</span><h3>Register</h3><p>Pengunjung diarahkan ke form minat dan portal PMB resmi.</p></article>
+      </div>
+    </section>
+
+    <section class="section light-section" id="register">
+      <div class="section-header reveal">
+        <p class="eyebrow">Registration Funnel</p>
+        <h2>Daftar Minat Kampus ITSB</h2>
+        <p>
+          Form ini menjadi tahap akhir perjalanan pengguna. Data dikirim melalui FormSubmit
+          ke email tujuan yang sudah kamu gunakan sebelumnya.
+        </p>
+      </div>
+      <form class="register-form reveal" action="https://formsubmit.co/luthfiakhyarhsb27@gmail.com" method="POST" id="registerForm">
+        <input type="hidden" name="_subject" value="Pendaftaran Minat Baru dari Landing Page IDCE" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <div class="form-row">
+          <div class="form-group"><label for="nama">Nama Lengkap</label><input id="nama" name="Nama Lengkap" type="text" placeholder="Masukkan nama kamu" required /></div>
+          <div class="form-group"><label for="email">Email Aktif</label><input id="email" name="Email" type="email" placeholder="contoh@email.com" required /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="wa">Nomor WhatsApp</label><input id="wa" name="WhatsApp" type="tel" placeholder="08xxxxxxxxxx" required /></div>
+          <div class="form-group"><label for="prodi">Minat Program Studi</label><select id="prodi" name="Minat Program Studi" required><option value="">Pilih program studi</option><option value="Sains Data">Sains Data</option><option value="Informatika">Informatika</option><option value="Bisnis Digital">Bisnis Digital</option><option value="Teknik Industri">Teknik Industri</option><option value="Program Studi Lainnya">Program Studi Lainnya</option></select></div>
+        </div>
+        <div class="form-group"><label for="pesan">Pertanyaan atau Catatan</label><textarea id="pesan" name="Pesan" placeholder="Tulis pertanyaan kamu tentang ITSB"></textarea></div>
+        <button class="submit-btn" type="submit">Kirim Registrasi Minat</button>
+      </form>
+    </section>
+
+    <section class="section location-section" id="location">
+      <div class="section-header reveal">
+        <p class="eyebrow">Campus Location</p>
+        <h2>Lokasi Kampus ITSB</h2>
+        <p>
+          Institut Teknologi Sains Bandung berada di Kota Deltamas Lot-A1 CBD,
+          Jl. Ganesha Boulevard No.1, Pasirranji, Cikarang Pusat, Kabupaten Bekasi, Jawa Barat 17530.
+        </p>
+      </div>
+      <div class="location-grid">
+        <article class="location-card reveal">
+          <h3>Institut Teknologi Sains Bandung</h3>
+          <p>Buka lokasi kampus melalui Google Maps atau lanjutkan ke portal PMB resmi ITSB.</p>
+          <div class="location-actions">
+            <a class="maps-btn" id="mapsBtn" href="https://www.google.com/maps/search/?api=1&query=Institut%20Teknologi%20Sains%20Bandung" target="_blank" rel="noopener noreferrer">Buka Google Maps</a>
+            <a class="maps-btn secondary" id="pmbLocationBtn" href="https://reg.itsb.ac.id/" target="_blank" rel="noopener noreferrer">Buka Portal PMB</a>
+          </div>
+        </article>
+        <div class="map-frame reveal">
+          <iframe title="Lokasi Kampus ITSB" src="https://www.google.com/maps?q=Institut%20Teknologi%20Sains%20Bandung&output=embed" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>IDCE | Immersive Digital Campus Experience for ITSB</p>
+  </footer>
+
+  <dialog class="info-modal" id="infoModal">
+    <button class="modal-close" id="modalClose" aria-label="Tutup popup">×</button>
+    <p class="eyebrow" id="modalLabel">Detail</p>
+    <h3 id="modalTitle">Judul</h3>
+    <p id="modalText">Isi detail.</p>
+  </dialog>
+
+  <div class="floating-dock" aria-label="Akses cepat IDCE">
+    <a href="#home" aria-label="Kembali ke Home">Home</a>
+    <a href="#chatbot" data-mission-trigger="m7" aria-label="Buka ChatBot  ">AI</a>
+    <a href="#mission" aria-label="Buka Mission">Mission</a>
+    <a href="#register" data-mission-trigger="m12" aria-label="Buka Form Register">Register</a>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+  <div class="celebration-layer" id="celebrationLayer" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
